@@ -21,6 +21,7 @@ export default function Basket(props) {
               <button onClick={() => onAdd(item)} className="add">
                 +
               </button>
+              {/* {discount && <p>You've got discount</p>} */}
             </div>
 
             <div className="col-2 text-right">

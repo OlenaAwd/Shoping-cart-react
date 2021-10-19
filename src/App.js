@@ -8,6 +8,7 @@ import { useState } from 'react';
 function App() {
   const { products } = data;
   const [cartItems, setCartItems] = useState([]);
+
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
     if (exist) {
@@ -32,6 +33,12 @@ function App() {
       );
     }
   };
+
+  // const discount = (product) => {
+  //   if (product.qty % 3 === 0) {
+  //     setProuctDiscount([...prouctDiscount, {...product}])
+  //   }
+  // }
   return (
     <div className="App">
       <Header countCartItems={cartItems.length}></Header>
@@ -41,6 +48,7 @@ function App() {
           cartItems={cartItems}
           onAdd={onAdd}
           onRemove={onRemove}
+          // discount={discount}
         ></Basket>
       </div>
     </div>
